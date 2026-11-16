@@ -71,3 +71,4 @@ uploads/              Ảnh tải lên
 - Kéo, lăn chuột, bấm mũi tên hoặc phím ← → để duyệt album; bấm thanh thời gian để nhảy tới năm.
 - Bấm bìa album (hoặc Enter) để mở; Esc để đóng.
 - Trong album, bấm ảnh để xem lớn; ← → chuyển ảnh.
+# album-ky-niem
