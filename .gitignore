@@ -1,0 +1,6 @@
+﻿# Dữ liệu thật (album + tài khoản quản trị) — tự tạo lại khi chạy lần đầu
+data/*.sqlite
+data/*.sqlite-*
+# Tệp riêng của máy
+.claude-flow/
+chay-online.bat

@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Album kỷ niệm</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261116g">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="probe" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="./"><span class="lbl" id="brandName">ALBUM KỶ NIỆM</span><i></i><span class="lbl" id="brandSub">LƯU GIỮ THEO NĂM</span></a>
+  <nav><a class="lbl" href="admin/">QUẢN TRỊ</a></nav>
+</header>
+
+<div class="bgword left" aria-hidden="true">ALBUM</div>
+<div class="bgword right" aria-hidden="true">KÝ ỨC</div>
+
+<div class="floor" aria-hidden="true"></div>
+
+<main>
+  <section class="shelf" id="shelf" aria-label="Kệ album"><div class="stage" id="stage"></div></section>
+
+  <div class="ring" id="ring" aria-hidden="true"><svg viewBox="0 0 12 12" width="12" height="12"><path d="M3 1.5v9l8-4.5z" fill="currentColor"/></svg></div>
+
+  <div class="caption" id="caption" aria-live="polite">
+    <div class="mask title" data-k="title"></div>
+    <div class="mask sub lbl" data-k="sub"></div>
+    <div class="rule"></div>
+    <div class="mask meta" data-k="meta"></div>
+  </div>
+
+  <button class="arrow prev" id="prev" aria-label="Album trước"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M6 1L1 6l5 5M1 6h23" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+  <button class="arrow next" id="next" aria-label="Album sau"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M19 1l5 5-5 5M24 6H1" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+
+  <div class="timeline" id="timeline" aria-hidden="true">
+    <div class="line"></div>
+    <div class="ticks" id="ticks"></div>
+    <div class="dot" id="dot"></div>
+  </div>
+
+  <p class="empty" id="empty" hidden>Chưa có album nào. <a href="admin/">Đăng nhập quản trị</a> để thêm album đầu tiên.</p>
+</main>
+
+<footer class="foot">
+  <span class="lbl" id="footLeft"></span>
+  <span class="lbl" id="footRight"></span>
+</footer>
+
+<section class="detail" id="detail" hidden aria-label="Chi tiết album">
+  <button class="box lbl close" id="close">ĐÓNG</button>
+  <div class="dbrand"><span class="lbl" id="dBrandName"></span><i></i><span class="lbl" id="dBrandSub"></span></div>
+  <div class="dgrid">
+    <div class="dleft">
+      <div class="mask"><span class="lbl dsub" id="dSub"></span></div>
+      <div class="mask"><h2 class="dtitle" id="dTitle"></h2></div>
+      <div class="mask"><span class="dmeta" id="dMeta"></span></div>
+      <div class="mask"><p class="ddesc" id="dDesc"></p></div>
+      <nav class="dnav" id="dNav" aria-label="Sự kiện trong năm"></nav>
+    </div>
+    <div class="dright">
+      <div class="book" id="dBody"></div>
+      <div class="book-nav">
+        <button class="pg-btn" id="pgPrev" aria-label="Trang trước"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M6 1L1 6l5 5M1 6h23" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+        <span class="lbl" id="pgNum" aria-live="polite"></span>
+        <button class="pg-btn" id="pgNext" aria-label="Trang sau"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M19 1l5 5-5 5M24 6H1" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Xem ảnh">
+  <button class="box lbl lb-close" id="lbClose">ĐÓNG</button>
+  <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Ảnh trước"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M6 1L1 6l5 5M1 6h23" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+  <figure><img id="lbImg" alt=""><figcaption><span id="lbCap"></span><span class="lbl" id="lbCount"></span></figcaption></figure>
+  <button class="lb-arrow lb-next" id="lbNext" aria-label="Ảnh sau"><svg viewBox="0 0 25 12" width="24" height="12"><path d="M19 1l5 5-5 5M24 6H1" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"><i class="c-ring"></i><i class="c-dot"></i><span class="c-lbl" id="cursorLbl">MỞ</span></div>
+
+<script src="js/sample-data.js?v=20261116g"></script>
+<script src="js/app.js?v=20261116g"></script>
+</body>
+</html>
